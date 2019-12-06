@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">rickandmorty</string>
+    <string name="character_id">id</string>
+    <string name="name">name</string>
+    <string name="status">status</string>
+    <string name="species">species</string>
+    <string name="type">type</string>
+    <string name="gender">gender</string>
+    <string name="origin">origin</string>
+    <string name="location">location</string>
+    <string name="created">created</string>
+    <string name="sort_name">sort name</string>
+    <string name="episode">episode count</string>
+    />
+</resources>
