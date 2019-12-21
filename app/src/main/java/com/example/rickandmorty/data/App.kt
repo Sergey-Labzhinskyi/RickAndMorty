@@ -2,21 +2,23 @@ package com.example.rickandmorty.data
 
 import android.app.Application
 import android.content.Context
-import androidx.room.Room
 import android.util.Log
+import androidx.room.Room
 
 class App : Application() {
+
 
     companion object {
         lateinit var instance: App
         lateinit var appContext: Context
         lateinit var mAppDataBase: AppDataBase
-         //var mAppDataBase: AppDataBase ? = null
-        init {
-            Log.d("APP", "companion object")
-        }
+        lateinit var  appComponent: ApplicationComponent
+        lateinit var applicationComponent: ApplicationComponent
+        //var mAppDataBase: AppDataBase ? = null
 
+        //appComponent = DaggerApplicationComponent.create()
     }
+
 
 
     override fun onCreate() {
@@ -26,12 +28,8 @@ class App : Application() {
             this, AppDataBase::class.java, "database"
         ).build()
         appContext = applicationContext
+        applicationComponent = DaggerApplicationComponent.builder().appModule( AppModule()).build()
+
         Log.d("APP", "onCreate")
     }
-
-
-
-
-
-
 }

@@ -1,6 +1,7 @@
 package com.example.rickandmorty.data
 
 import androidx.room.TypeConverter
+import com.example.rickandmorty.model.Characterr
 import com.google.gson.Gson
 
 import com.google.gson.reflect.TypeToken
@@ -35,6 +36,7 @@ class Converters {
             object : TypeToken<List<String?>?>() {}.type
         return Gson().fromJson(value, listType)
     }
+
 
    /* @TypeConverter
     fun fromLocation(location: Location): String {

@@ -1,9 +1,7 @@
 package com.example.rickandmorty.data
 
-import androidx.room.Dao
-import androidx.room.Insert
-import androidx.room.Query
-import androidx.room.Update
+import androidx.room.*
+import com.example.rickandmorty.model.CharacterList
 import com.example.rickandmorty.model.Characterr
 import io.reactivex.Completable
 import io.reactivex.Single
@@ -12,9 +10,13 @@ import io.reactivex.Single
 @Dao
 interface CharacterDao {
 
-    @Query("SELECT * FROM characterr")
-    fun getAllCharacter(): Single<List<Characterr>>
+    @Transaction
+    @Query("SELECT * FROM info")
+    fun getAllCharacter(): Single<List<CharacterList>>
 
+
+
+ @Transaction
     @Insert
     fun insert(list: List<Characterr>): Completable
 

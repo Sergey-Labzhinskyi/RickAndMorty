@@ -5,11 +5,13 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 import com.google.gson.annotations.SerializedName
 import java.io.Serializable
+
 @Entity
 data class Characterr(
-    @SerializedName("id")
+
     @PrimaryKey(autoGenerate = true)
-    val id: Int? = null,
+    @SerializedName("id")
+     val id: Int? = null,
     @SerializedName("name")
     val name: String? = null,
     @SerializedName("status")
@@ -29,13 +31,17 @@ data class Characterr(
     @SerializedName("image")
     val image: String? = null,
     @SerializedName("episode")
-   // @Ignore
+    // @Ignore
     val episode: List<String>? = null,
     @SerializedName("url")
     val url: String? = null,
     @SerializedName("created")
     val created: String? = null
-) : Serializable
+) : Serializable, Comparable<Characterr> {
+    override fun compareTo(other: Characterr): Int {
+        return this.name?.compareTo(other.name!!)!!
+    }
+}
 
 
 
