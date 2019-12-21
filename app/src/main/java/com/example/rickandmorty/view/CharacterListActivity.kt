@@ -21,7 +21,7 @@ class CharacterListActivity : AppCompatActivity(){
 
         var a = ActivityManager1.MemoryInfo()
 
-        Log.d("fdfdf", a.toString())
+       // Log.d("fdfdf", a.toString())
 
     }
 }
